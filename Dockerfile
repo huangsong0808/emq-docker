@@ -69,8 +69,9 @@ RUN apk --no-cache add \
         git \
         make \
         perl \
-    && git clone -b ${EMQ_VERSION} https://github.com/emqtt/emq-relx.git /emqttd \
+    && git clone -b ${EMQ_VERSION} https://github.com/huangsong0808/emq-relx.git /emqttd \
     && cd /emqttd \
+    && git checkout hs-temp \
     && make \
     && mkdir /opt && mv /emqttd/_rel/emqttd /opt/emqttd \
     && cd / && rm -rf /emqttd \
